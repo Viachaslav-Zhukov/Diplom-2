@@ -38,11 +38,9 @@ public class CreateOrderTest {
 
         int actualStatusCode = createOrder.extract().statusCode();
         boolean isResponseSuccess = createOrder.extract().path("success");
-        int orderNumber = createOrder.extract().path("order.number");
 
         Assert.assertEquals(actualStatusCode, SC_OK);
         Assert.assertTrue(isResponseSuccess);
-        Assert.assertNotNull(orderNumber);
     }
 
     @Test
@@ -54,11 +52,9 @@ public class CreateOrderTest {
 
         int actualStatusCode = createOrder.extract().statusCode();
         boolean isResponseSuccess = createOrder.extract().path("success");
-        int orderNumber = createOrder.extract().path("order.number");
 
         Assert.assertEquals(actualStatusCode, SC_OK);
         Assert.assertTrue(isResponseSuccess);
-        Assert.assertNotNull(orderNumber);
     }
 
     @Test

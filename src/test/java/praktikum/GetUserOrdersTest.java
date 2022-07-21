@@ -22,8 +22,7 @@ public class GetUserOrdersTest {
     @Test
     @DisplayName("Получение  заказов при авторизации пользователя")
     public void getUserOrdersBeingAuthorized() {
-        UserApiPattern userApi = new UserApiPattern();
-        String token = userApi.login(loginForToken).extract().path("accessToken");
+        String token = UserApiPattern.login(loginForToken).extract().path("accessToken");
         ValidatableResponse response = orderApi.getUserOrdersWithAuth(token);
         response.statusCode(200).and().assertThat().body("success", is(true));
     }
